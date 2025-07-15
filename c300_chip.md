@@ -1,5 +1,21 @@
 # C300 SystemC Architecture - RTL Synthesis Ready
 ```
+DILARANG KERAS:
+-Kode dummy/placeholder/simulasi/konseptual/TODO
+-Kode yang menyebabkan bottleneck/overhead/race condition/overflow/overheat
+-Duplikasi modul atau fungsi
+-Asumsi tanpa validasi industri proven
+-Kode yang tidak dapat diintegrasikan
+-Global variable dan shared memory langsung
+
+WAJIB:
+-Semua kode siap produksi pabrik
+-Integrasi modul tanpa kendala
+-Dokumentasi lengkap dalam bahasa Indonesia
+-Testing otomatis via GitHub workflow
+Prinsip SOLID (Single Responsibility, Open-closed, Liskov substitution, Interface segregation, Dependency inversion)
+-DRY (Don't Repeat Yourself) dan KISS (Keep It Simple, Stupid)
+
 Hanya diizinkan Optimize menggunakan Model AI Claude.ai deepseek.ai, selain dua platform ini dilarang keras, perusahaan sudah backup semua fitur premium didunia platform AI tersebut.
 ```
 ## 🏗️ ARSITEKTUR DIRECTORY STRUKTUR C300 CHIP KHUSUS SOLO FARM MINER TANPA POOL ONLY BITCOIN RPC
