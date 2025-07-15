@@ -1,4 +1,4 @@
-c300_systemc/
+```c300_systemc/
 ├── core/
 │   ├── c300_core.cpp
 │   ├── c300_core.hpp
@@ -37,3 +37,4 @@ c300_systemc/
 ├── CMakeLists.txt
 ├── Makefile
 └── README.md
+```
