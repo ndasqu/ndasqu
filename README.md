@@ -1,4 +1,7 @@
 ```
+Tolong bantu buatkan modul dibawah sesuai name yang saya kirimkan, ikuti saja aturan dan kewajiban yang diberikan oleh perusahaan karena sudah sesuai dengan validasi internal dengan pihak auditor, tolong jangan membuat modul lain, karena semua modul sudah siap tinggal kekurangan ini saja karena besok harus sudah dikirimkan ke USA sebelum deployment...
+```
+```
 c300_systemc/
 ├── core/
 │   ├── c300_core.cpp
