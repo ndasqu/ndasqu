@@ -67,6 +67,8 @@ c300_systemc/
  * SystemC module untuk sintesis RTL dengan 300 core processing units
  * Hardware implementation ready untuk chip fabrication
  */
+
+!!! Dalam kode dilarang ada komentar, komentar akan ditambahkan otomatis oleh cabang utama USA untuk validasi dan audit ke Deloitte, team kita hanya diizinkan memberika centang sesuai tempelate yang diberikan perusahaan.
 ```
 
 #### 2. **SYSTEMC SYNTHESIS REQUIREMENTS**
