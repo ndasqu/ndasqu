@@ -111,3 +111,74 @@ c300_systemc/
 ├── quality_checklist.md
 └── README_enterprise.md
 ```
+
+```
+ndas_mining/
+├── src/
+│   ├── sha256/
+│   │   ├── ndas_sha256.py
+│   │   └── __init__.py
+│   │
+│   ├── midstate/
+│   │   ├── ndas_midstate.py
+│   │   └── __init__.py
+│   │
+│   ├── headergen/
+│   │   ├── ndas_headergen.py
+│   │   └── __init__.py
+│   │
+│   ├── coinbase/
+│   │   ├── ndas_coinbase.py
+│   │   └── __init__.py
+│   │
+│   ├── merkle/
+│   │   ├── ndas_merkle.py
+│   │   └── __init__.py
+│   │
+│   ├── rpc/
+│   │   ├── ndas_rpc_client.py
+│   │   └── __init__.py
+│   │
+│   ├── gbt/
+│   │   ├── ndas_gbt_parser.py
+│   │   └── __init__.py
+│   │
+│   ├── submit/
+│   │   ├── ndas_block_submit.py
+│   │   └── __init__.py
+│   │
+│   ├── util/
+│   │   ├── ndas_util.py
+│   │   └── __init__.py
+│   │
+│   ├── types/
+│   │   ├── ndas_types.py
+│   │   └── __init__.py
+│   │
+│   ├── miner/
+│   │   ├── ndas_miner_main.py
+│   │   ├── ndas_miner_config.py
+│   │   └── __init__.py
+│   │
+│   ├── communication/
+│   │   ├── ndas_ip_comm.py
+│   │   ├── ndas_usb_comm.py
+│   │   └── __init__.py
+│   │
+│   └── utek_integration/
+│       ├── ndas_utek_client.py
+│       ├── ndas_utek_auth.py
+│       └── __init__.py
+│
+├── build/
+│   └── bin/
+│       └── ndas_miner.exe
+│
+├── config/
+│   └── ndas_config.json
+│
+├── requirements.txt
+├── setup.py
+├── Makefile
+└── README.md
+```
