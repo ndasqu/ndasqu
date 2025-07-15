@@ -1,4 +1,5 @@
-```c300_systemc/
+```
+c300_systemc/
 ├── core/
 │   ├── c300_core.cpp
 │   ├── c300_core.hpp
@@ -24,6 +25,12 @@
 │   ├── c300_system.cpp
 │   ├── c300_system.hpp
 │   └── system_doc.md
+│
+├── optimization/
+│   ├── compute_optimization.hpp
+│   ├── throughput_optimization.hpp
+│   ├── memory_pool.hpp
+│   └── simd_acceleration.hpp
 │
 ├── synthesis/
 │   ├── constraints/       ← Timing constraints
