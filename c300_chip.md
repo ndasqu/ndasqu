@@ -85,11 +85,11 @@ c300_systemc/
 - **MANDATORY:** Reset handling dengan async reset capability
 
 #### 5. **HARDWARE MODELING CONSTRAINTS**
-- **MANDATORY:** 300 core instances dengan physical mapping
-- **MANDATORY:** 1000MHz clock domain dengan proper timing
+- **MANDATORY:** 300 core instances dengan physical mapping 300 physical ALUs
+- **MANDATORY:** 1GHz clock domain dengan proper timing
 - **MANDATORY:** Power-aware design dengan clock gating
 - **MANDATORY:** Area constraint compliance 240W thermal budget
-- **MANDATORY:** Pipeline depth 2-cycle untuk hash computation
+- **MANDATORY:** Pipeline depth 2-cycle untuk hash computation 2-cycle ALU
 
 #### 6. **SYSTEMC COMMUNICATION PROTOCOL**
 - **MANDATORY:** `sc_fifo` untuk inter-module data transfer
@@ -103,7 +103,7 @@ c300_systemc/
 - **MANDATORY:** Memory map definition untuk 300 core addressing
 - **MANDATORY:** Dual-port memory untuk concurrent access
 - **MANDATORY:** Cache-coherent architecture untuk shared resources
-- **MANDATORY:** Memory bandwidth 9.6 GB/s sustained throughput
+- **MANDATORY:** Memory bandwidth 16 GB/s sustained throughput
 
 #### 8. **CLOCK DOMAIN MANAGEMENT**
 - **MANDATORY:** Single 1000MHz master clock dengan distribution
@@ -147,7 +147,7 @@ c300_systemc/
 - **Hardware:** Physical core isolation dengan dedicated resources
 - **Interface:** `sc_port` untuk core control, `sc_signal` untuk status
 - **Clock:** Individual clock enable untuk power management
-- **Security:** Hardware UUID generator per core instance
+- **Security:** Hardware UUID generator per core instance 300 physical ALUs
 - **Output:** `libc300_systemc_core.so`
 
 #### 2. **ENGINE MODULE** (`engine/`)
