@@ -54,7 +54,7 @@ c300_systemc/
 
 ### 📜 STANDAR WAJIB SYNTHESIS PRODUCTION
 
-#### 1. **HEADER INFORMASI SETIAP FILE**
+#### 1. **HEADER INFORMASI SETIAP FILE INDONESIA BAHASA**
 ```cpp
 /**
  * @file c300_nama_modul.hpp
@@ -109,7 +109,7 @@ c300_systemc/
 - **MANDATORY:** Memory map definition untuk 300 core addressing
 - **MANDATORY:** Dual-port memory untuk concurrent access
 - **MANDATORY:** Cache-coherent architecture untuk shared resources
-- **MANDATORY:** Memory bandwidth 16 GB/s sustained throughput
+- **MANDATORY:** Memory bandwidth 21 GB/s sustained throughput
 
 #### 8. **CLOCK DOMAIN MANAGEMENT**
 - **MANDATORY:** Single 1GHz master clock dengan distribution
@@ -645,7 +645,7 @@ clean:
 - **Error Rate:** Zero functional errors dalam simulation
 - **Throughput Improvement:** >20% performance gain dengan optimasi
 
-## 🔧 SYSTEMC SYNTHESIS CHECKLIST
+## 🔧 SYSTEMC SYNTHESIS CHECKLIST TANPA KOMENTAR
 
 ### Pre-Synthesis Validation:
 - [ ] SystemC compilation clean dengan synthesis flags
@@ -679,7 +679,7 @@ clean:
 - [ ] **OPTIMASI:** Optimization reports generated
 - [ ] **OPTIMASI:** Profiling data available untuk RTL team
 
-## 📋 VALIDATION CENTANG DALAM KODE
+## 📋 VALIDATION CENTANG DALAM KODE TANPA KOMENTAR
 
 ### SystemC Synthesis Validation:
 ```cpp
