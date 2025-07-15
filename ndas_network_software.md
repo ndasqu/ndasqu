@@ -75,6 +75,26 @@ ndas_mining/
 
 ## 🔒 HUKUM MUTLAK PENULISAN KODE PYTHON - CERTIRIK & DELOITTE COMPLIANCE
 
+#PEP COMPLIANCE MATRIX
+
+PEP 8: Style Guide for Python Code (MANDATORY)
+PEP 257: Docstring Conventions (MANDATORY)
+PEP 484: Type Hints (MANDATORY)
+PEP 526: Variable Annotations (MANDATORY)
+PEP 563: Postponed Evaluation of Annotations (MANDATORY)
+PEP 585: Type Hinting Generics In Standard Collections (RECOMMENDED)
+PEP 604: Allow writing union types as X | Y (RECOMMENDED)
+PEP 613: Explicit Type Aliases (RECOMMENDED)
+
+#QUALITY ASSURANCE FRAMEWORK
+
+ISO 9001: Quality Management System compliance
+CMMI Level 5: Capability Maturity Model Integration
+Six Sigma: Defect reduction methodology
+Agile Testing Pyramid: Unit → Integration → E2E testing
+TDD/BDD: Test-Driven/Behavior-Driven Development
+Clean Code: Robert C. Martin principles
+
 ### 📜 STANDAR WAJIB CERTIRIK VALIDATION
 
 #### 1. **KEAMANAN KODE PYTHON (SECURITY REQUIREMENTS)**
