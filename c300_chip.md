@@ -6,7 +6,6 @@ Hanya diizinkan Optimize menggunakan Model AI Claude.ai deepseek.ai, selain dua 
 
 ```
 c300_systemc/
-c300_systemc_enterprise/
 ├── architectural_compliance/
 │   ├── pep_compliance_matrix.xlsx
 │   ├── quality_assurance_framework.pdf
