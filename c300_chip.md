@@ -55,6 +55,7 @@ c300_systemc/
 ├── core/
 │   ├── c300_core.cpp
 │   ├── c300_core.hpp
+│   ├── c300_core_grid.hpp
 │   ├── core_security.hpp
 │   ├── core_tmr.hpp
 │   ├── core_lockstep.hpp
@@ -252,13 +253,59 @@ c300_systemc/
 ### 📋 STRUKTUR MODUL SYSTEMC
 
 #### 1. **CORE MODULE** (`core/`) - DENGAN HARDWARE UUID
-**SystemC Implementation:** 300 individual SC_MODULE instances
-- **Hardware:** Physical core isolation dengan dedicated resources
-- **Interface:** `sc_port` untuk core control, `sc_signal` untuk status
-- **Clock:** Individual clock enable untuk power management
-- **Security:** Hardware UUID generator per core instance 300 physical ALUs
-- **Optimization:** Template specialization, SIMD acceleration, memory pool allocation
-- **Output:** `libc300_systemc_core.so`
+**SystemC Implementation:**
+✔️ `SC_MODULE(C300_Core)` dideklarasikan sebagai satuan inti hashing
+✔️ `SC_MODULE(C300_CoreArray)` digunakan untuk **statik menginstansiasi tepat 300 core** dalam array synthesizable
+✔️ `sc_vector` digunakan agar eksplisit 300 core dikenali synthesis tools
+✔️ Setiap core memiliki **UUID unik**, terikat pada index (i = 0–299)
+✔️ Clock dan reset dibagi dari parent top-level (System atau Controller)
+
+---
+
+### 🧱 **Hardware Mapping:**
+
+* **Jumlah Core:** 300 SC\_MODULE statik (`sc_vector<C300_Core>`)
+* **UUID:** Diassign berdasarkan `core_id` (0 – 299), dan bisa dikombinasi dengan fuse/TRNG
+* **Isolasi:** Setiap core dapat dikontrol secara independen oleh `controller/`
+* **Clock Enable:** Terkoneksi `core_enable[i]` dari arbiter pusat
+* **Power Monitoring:** Status tiap core terhubung ke `core_status[i]`
+
+---
+
+### 🔌 **Interface:**
+`| Port / Signal                  | Jenis       | Keterangan                            |
+| ------------------------------ | ----------- | ------------------------------------- |
+| `sc_in<bool> clk`              | Clock       | Clock 1GHz (dibagi dari sistem)       |
+| `sc_in<bool> rst_n`            | Reset       | Asynchronous reset                    |
+| `sc_in<bool> enable`           | Core Enable | Clock gating / power domain switching |
+| `sc_in<sc_uint<32>> core_id`   | Input UUID  | ID unik tiap core                     |
+| `sc_out<bool> done`            | Status      | Menandakan hash selesai               |
+| `sc_out<sc_biguint<256>> hash` | Output      | Hash SHA-256 result                   |`
+
+---
+
+### 🔐 **Security:**
+
+* **Hardware UUID:** Dihasilkan berdasarkan kombinasi `core_id` + `fuse_key` (ROM-fused)
+* **Tamper Detection:** Sinyal abnormal dari core dikembalikan melalui `core_status[]`
+* **Isolation Domain:** Arsitektur `lockstep` dan `TMR` terintegrasi (`core_lockstep.hpp`, `core_tmr.hpp`)
+
+---
+
+### 🚀 **Optimization:**
+
+* ✅ **Template Specialization:** Untuk membedakan instruksi core berdasarkan `core_id`
+* ✅ **SIMD SHA-256 acceleration:** Menggunakan `AVX2`, `SHA`, `FMA`
+* ✅ **Memory Pool Allocation:** Zero-copy buffer untuk pipeline inter-stage
+* ✅ **Loop Unrolling:** Inline untuk inner hash loop
+
+---
+
+### 🎯 **Output:**
+
+* `libc300_systemc_core.so`
+  ⮕ Berisi definisi `C300_Core`, `C300_CoreArray`, dan file `core_security`, `core_tmr`, `core_lockstep`
+  ⮕ Sudah *synthesis-ready* tanpa alokasi dinamis (`new/delete`)
 
 #### 2. **ENGINE MODULE** (`engine/`)
 **SystemC Implementation:** SHA-256 pipeline dengan 2-cycle latency
