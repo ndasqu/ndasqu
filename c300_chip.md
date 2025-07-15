@@ -1,5 +1,7 @@
 # C300 SystemC Architecture - RTL Synthesis Ready
-
+```
+Semua staff di Indonesia wajib mengikuti dokumen rule_dan_kode_etik.md dalam desain penulisan kode serta diwajibkan mengikuti standard disetiap modul chip, setiap modul chip memiliki standard yang berbeda! Bagi siapapun ditemukan melakukan pelanggaran dengan mempublikasikan modul resmi perusahaan akan terancam hukuman pidana! Hanya diizinkan Optimize menggunakan Model AI Claude.ai deepseek.ai, selain dua platform ini dilarang keras, perusahaan sudah backup semua fitur premium didunia platform AI tersebut.
+```
 ## 🏗️ ARSITEKTUR DIRECTORY STRUKTUR C300 CHIP KHUSUS SOLO FARM MINER TANPA POOL ONLY BITCOIN RPC
 
 ```
