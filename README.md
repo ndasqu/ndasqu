@@ -3,6 +3,82 @@ Tolong bantu buatkan modul dibawah sesuai name yang saya kirimkan, ikuti saja at
 ```
 ```
 c300_systemc/
+├── src/
+│   ├── core/
+│   │   ├── c300_core.hpp
+│   │   ├── c300_core.cpp
+│   │   ├── c300_core_array.hpp
+│   │   ├── core_uuid.hpp
+│   │   ├── core_security.hpp
+│   │   └── core_tmr.hpp
+│   │
+│   ├── engine/
+│   │   ├── c300_engine.hpp
+│   │   ├── c300_engine.cpp
+│   │   ├── sha256_pipeline.hpp
+│   │   ├── engine_bist.hpp
+│   │   └── circular_buffer.hpp
+│   │
+│   ├── controller/
+│   │   ├── c300_controller.hpp
+│   │   ├── c300_controller.cpp
+│   │   ├── work_arbiter.hpp
+│   │   ├── qos_manager.hpp
+│   │   └── adaptive_scheduler.hpp
+│   │
+│   ├── network/
+│   │   ├── c300_network.hpp
+│   │   ├── c300_network.cpp
+│   │   ├── tcp_interface.hpp
+│   │   ├── network_security.hpp
+│   │   └── lockless_queue.hpp
+│   │
+│   ├── system/
+│   │   ├── c300_system.hpp
+│   │   ├── c300_system.cpp
+│   │   ├── clock_manager.hpp
+│   │   ├── power_manager.hpp
+│   │   ├── reset_controller.hpp
+│   │   └── system_monitor.hpp
+│   │
+│   └── common/
+│       ├── c300_types.hpp
+│       ├── c300_constants.hpp
+│       ├── synthesis_utils.hpp
+│       └── security_common.hpp
+│
+├── testbench/
+│   ├── tb_c300_core.hpp
+│   ├── tb_c300_engine.hpp
+│   ├── tb_c300_controller.hpp
+│   ├── tb_c300_network.hpp
+│   ├── tb_c300_system.hpp
+│   └── common/
+│       ├── tb_utils.hpp
+│       └── verification_env.hpp
+│
+├── constraints/
+│   ├── timing_constraints.sdc
+│   ├── synthesis_constraints.tcl
+│   └── power_constraints.upf
+│
+├── build/
+│   ├── Makefile
+│   ├── CMakeLists.txt
+│   └── synthesis_scripts/
+│
+├── docs/
+│   ├── systemc_coding_standards.md
+│   ├── module_specifications.md
+│   └── synthesis_guidelines.md
+│
+└── lib/
+    └── (generated libraries)
+```
+
+
+```
+c300_systemc/
 ├── architectural_compliance/
 │   ├── pep_compliance_matrix.xlsx
 │   ├── quality_assurance_framework.pdf
