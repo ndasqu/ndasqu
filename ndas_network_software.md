@@ -1,71 +1,71 @@
-# NDAS Mining Architecture - Python Integration dengan UTEK.V.26
+# PANDUAN PENGEMBANGAN MODUL SERTA ATURAN YANG WAJIB DIPATUHI OLEH SELURUH MITRA DIINDONESIA
 
-## 🏗️ ARSITEKTUR DIRECTORY PYTHON OPTIMIZED
+## 🏗️ ARSITEKTUR DIRECTORY
 
 ```
-ndas_mining/
+nambang_ndas/
 ├── src/
 │   ├── sha256/
-│   │   ├── ndas_sha256.py
+│   │   ├── nambang_sha256.py
 │   │   └── __init__.py
 │   │
 │   ├── midstate/
-│   │   ├── ndas_midstate.py
+│   │   ├── nambang_midstate.py
 │   │   └── __init__.py
 │   │
 │   ├── headergen/
-│   │   ├── ndas_headergen.py
+│   │   ├── nambang_headergen.py
 │   │   └── __init__.py
 │   │
 │   ├── coinbase/
-│   │   ├── ndas_coinbase.py
+│   │   ├── nambang_coinbase.py
 │   │   └── __init__.py
 │   │
 │   ├── merkle/
-│   │   ├── ndas_merkle.py
+│   │   ├── nambang_merkle.py
 │   │   └── __init__.py
 │   │
 │   ├── rpc/
-│   │   ├── ndas_rpc_client.py
+│   │   ├── nambang_rpc_client.py
 │   │   └── __init__.py
 │   │
 │   ├── gbt/
-│   │   ├── ndas_gbt_parser.py
+│   │   ├── nambang_gbt_parser.py
 │   │   └── __init__.py
 │   │
 │   ├── submit/
-│   │   ├── ndas_block_submit.py
+│   │   ├── nambang_block_submit.py
 │   │   └── __init__.py
 │   │
 │   ├── util/
-│   │   ├── ndas_util.py
+│   │   ├── nambang_util.py
 │   │   └── __init__.py
 │   │
 │   ├── types/
-│   │   ├── ndas_types.py
+│   │   ├── nambang_types.py
 │   │   └── __init__.py
 │   │
-│   ├── miner/
-│   │   ├── ndas_miner_main.py
-│   │   ├── ndas_miner_config.py
+│   ├── nambang/
+│   │   ├── nambang_main.py
+│   │   ├── nambang_config.py
 │   │   └── __init__.py
 │   │
 │   ├── communication/
-│   │   ├── ndas_ip_comm.py
-│   │   ├── ndas_usb_comm.py
+│   │   ├── nambang_ip_comm.py
+│   │   ├── nambang_usb_comm.py
 │   │   └── __init__.py
 │   │
 │   └── utek_integration/
-│       ├── ndas_utek_client.py
-│       ├── ndas_utek_auth.py
+│       ├── nambang_utek_client.py
+│       ├── nambang_utek_auth.py
 │       └── __init__.py
 │
 ├── build/
 │   └── bin/
-│       └── ndas_miner.exe
+│       └── nambang_ndas.exe
 │
 ├── config/
-│   └── ndas_config.json
+│   └── nambang_config.json
 │
 ├── requirements.txt
 ├── setup.py
@@ -73,303 +73,298 @@ ndas_mining/
 └── README.md
 ```
 
-## 🔒 HUKUM MUTLAK PENULISAN KODE PYTHON - CERTIRIK & DELOITTE COMPLIANCE
+## 🔒 STANDAR PENGKODEAN PYTHON - ENTERPRISE ASIC NDAS GRADE
 
-#PEP COMPLIANCE MATRIX
+### 📜 PEP COMPLIANCE MATRIX (WAJIB)
 
-PEP 8: Style Guide for Python Code (MANDATORY)
-PEP 257: Docstring Conventions (MANDATORY)
-PEP 484: Type Hints (MANDATORY)
-PEP 526: Variable Annotations (MANDATORY)
-PEP 563: Postponed Evaluation of Annotations (MANDATORY)
-PEP 585: Type Hinting Generics In Standard Collections (RECOMMENDED)
-PEP 604: Allow writing union types as X | Y (RECOMMENDED)
-PEP 613: Explicit Type Aliases (RECOMMENDED)
+| Standard | Level | Implementasi untuk ASIC NDAS |
+|----------|-------|--------------------------------|
+| PEP 8: Style Guide | **MANDATORY** | Konsistensi code untuk team development |
+| PEP 257: Docstring | **MANDATORY** | Dokumentasi untuk maintenance bahasa indonesia |
+| PEP 484: Type Hints | **MANDATORY** | Safety untuk ASIC communication |
+| PEP 526: Variable Annotations | **MANDATORY** | Clarity untuk ndas parameters |
+| PEP 563: Postponed Evaluation | **MANDATORY** | Performance untuk real-time ndas |
+| PEP 585: Generic Types | **RECOMMENDED** | Clean code untuk collections |
+| PEP 604: Union Types (X \| Y) | **RECOMMENDED** | Modern Python syntax |
+| PEP 613: Type Aliases | **RECOMMENDED** | Readable type definitions |
 
-#QUALITY ASSURANCE FRAMEWORK
+### 📜 STANDAR KEAMANAN KODE (SECURITY - WAJIB)
 
-ISO 9001: Quality Management System compliance
-CMMI Level 5: Capability Maturity Model Integration
-Six Sigma: Defect reduction methodology
-Agile Testing Pyramid: Unit → Integration → E2E testing
-TDD/BDD: Test-Driven/Behavior-Driven Development
-Clean Code: Robert C. Martin principles
-
-### 📜 STANDAR WAJIB CERTIRIK VALIDATION
-
-#### 1. **KEAMANAN KODE PYTHON (SECURITY REQUIREMENTS)**
-- **WAJIB**: Type hints untuk semua fungsi dan parameter
-- **WAJIB**: Input validation dengan pydantic models
-- **WAJIB**: Secrets management dengan environment variables
-- **WAJIB**: SQL injection prevention dengan parameterized queries
-- **WAJIB**: Path traversal prevention dengan secure path handling
+#### 1. **UTEK.V.26 INTEGRATION SECURITY**
+- **WAJIB**: Type hints untuk semua fungsi RPC
+- **WAJIB**: Input validation untuk ASIC communication data
+- **WAJIB**: Secure credential management untuk UTEK authentication
+- **WAJIB**: Path validation untuk library loading
 - **LARANGAN**: `eval()`, `exec()`, `pickle.load()` dari untrusted sources
-- **LARANGAN**: Hardcoded credentials atau sensitive data
+- **LARANGAN**: Hardcoded credentials dalam source code
 
-#### 2. **THREAD SAFETY & CONCURRENCY**
-- **WAJIB**: `threading.Lock()` untuk shared resources
-- **WAJIB**: `asyncio` untuk I/O bound operations
-- **WAJIB**: `queue.Queue` untuk thread-safe communication
-- **WAJIB**: Context managers untuk resource management
+#### 2. **NDAS OPERATION SECURITY**
+- **WAJIB**: Validation untuk block templates dari RPC
+- **WAJIB**: Sanitization untuk ASIC response data
+- **WAJIB**: Secure handling untuk private keys (jika ada)
+- **LARANGAN**: Plain text credential storage
+- **LARANGAN**: Unvalidated data dari network sources
+
+### 📜 STANDAR THREAD SAFETY & CONCURRENCY (WAJIB)
+
+#### 1. **ASIC COMMUNICATION CONCURRENCY**
+- **WAJIB**: `threading.Lock()` untuk shared ndas state
+- **WAJIB**: `asyncio` untuk concurrent ASIC communication
+- **WAJIB**: `queue.Queue` untuk job distribution ke multiple ASIC
+- **WAJIB**: Context managers untuk network resource management
+- **LARANGAN**: Race conditions dalam ndas job assignment
 - **LARANGAN**: Global mutable state tanpa synchronization
-- **LARANGAN**: Race conditions dalam multi-threaded code
 
-#### 3. **PERFORMANCE & RELIABILITY**
-- **WAJIB**: Exception handling dengan specific exception types
-- **WAJIB**: Logging dengan structured format (JSON)
-- **WAJIB**: Connection pooling untuk network operations
-- **WAJIB**: Graceful degradation pada error conditions
+#### 2. **RPC CONNECTION MANAGEMENT**
+- **WAJIB**: Connection pooling untuk UTEK RPC calls
+- **WAJIB**: Thread-safe credential sharing
+- **WAJIB**: Atomic operations untuk block submission
+- **LARANGAN**: Concurrent access ke single RPC connection
+- **LARANGAN**: Blocking operations pada main ndas thread
+
+### 📜 STANDAR PERFORMANCE & RELIABILITY (WAJIB)
+
+#### 1. **NDAS PERFORMANCE REQUIREMENTS**
+- **WAJIB**: Exception handling untuk hardware failures
+- **WAJIB**: Connection retry mechanism untuk ASIC communication
+- **WAJIB**: Timeout handling untuk network operations
+- **WAJIB**: Resource cleanup untuk failed operations
 - **LARANGAN**: Bare `except:` clauses
-- **LARANGAN**: Memory leaks dari unclosed resources
+- **LARANGAN**: Memory leaks dari unclosed connections
+- **LARANGAN**: Bottleneck overhead dalam critical paths
 
-### 📜 STANDAR WAJIB DELOITTE VALIDATION
+#### 2. **OPERATIONAL RELIABILITY**
+- **WAJIB**: Structured logging untuk troubleshooting
+- **WAJIB**: Health checks untuk ASIC connectivity
+- **WAJIB**: Graceful degradation pada partial failures
+- **WAJIB**: Automatic recovery mechanisms
+- **LARANGAN**: Silent failures dalam ndas operations
+- **LARANGAN**: Unhandled exceptions yang crash nambang
 
-#### 1. **KODE PRODUCTION GRADE**
-- **WAJIB**: Docstrings untuk semua public methods
-- **WAJIB**: Return type annotations
-- **WAJIB**: Configuration validation dengan JSON schema
-- **WAJIB**: Health check endpoints
+### 📜 STANDAR MAINTAINABILITY (WAJIB)
+
+#### 1. **CODE STRUCTURE UNTUK ASIC NDAS**
+- **WAJIB**: Docstrings untuk public ndas methods bahasa indonesia
+- **WAJIB**: Return type annotations untuk all functions
+- **WAJIB**: Configuration validation dengan schema
+- **WAJIB**: Single responsibility per module
 - **LARANGAN**: `print()` statements dalam production code
-- **LARANGAN**: Debug code atau commented out code
+- **LARANGAN**: Magic numbers untuk ndas parameters
+- **LARANGAN**: TODO, simulasi, dummy, placeholder, fake kode, konseptual
 
-#### 2. **MAINTAINABILITY & READABILITY**
-- **WAJIB**: PEP 8 compliance dengan black formatter
-- **WAJIB**: Single responsibility principle
-- **WAJIB**: Dependency injection pattern
-- **WAJIB**: Interface segregation dengan ABC
-- **LARANGAN**: Magic numbers atau hardcoded values
-- **LARANGAN**: Functions dengan lebih dari 20 lines
+#### 2. **MODULARITY & INTERFACE DESIGN**
+- **WAJIB**: Abstract base classes untuk communication interfaces
+- **WAJIB**: Dependency injection untuk testable code
+- **WAJIB**: Interface segregation untuk ASIC types
+- **WAJIB**: Clean separation antara RPC dan hardware communication
+- **LARANGAN**: Tight coupling antara modules
+- **LARANGAN**: Functions dengan lebih dari 25 lines
 
-#### 3. **TESTING & VALIDATION**
-- **WAJIB**: Unit testing dengan pytest
-- **WAJIB**: Integration testing untuk external dependencies
-- **WAJIB**: Mock objects untuk external services
-- **WAJIB**: Code coverage minimum 90%
-- **LARANGAN**: Tests yang depend pada external state
-- **LARANGAN**: Flaky tests atau non-deterministic behavior
+### 📜 HEADER INFORMASI STANDARD (WAJIB - SIMPLIFIED)
 
-### 📜 STANDAR HEADER INFORMASI WAJIB
-
-#### Template Header untuk Semua File Python:
 ```python
 """
 @file: [nama_file].py
-@tujuan: [Deskripsi singkat tujuan modul]
-@tanggung_jawab: [Tanggung jawab utama modul]
-@dependencies: [Daftar dependensi eksternal]
-@output: [Format output yang dihasilkan]
-@performance: [Target performance requirement]
-@thread_safety: [Thread safety guarantee]
-@memory_usage: [Estimasi penggunaan memory]
-@error_handling: [Strategi error handling]
-@validation: [Metode validasi input/output]
-@author: Tim NDAS Mining
-@version: 1.0.0
-@compliance: CertIK Security + Deloitte Production Grade
-@last_modified: [Tanggal terakhir dimodifikasi]
-@review_status: [Status review: PENDING/APPROVED/REJECTED]
+@coder: Susanto - Libcode Indonesia
+@dependency: [Dependencies]
+@function: [Core function]
 """
 ```
 
-### 📜 STANDAR UTEK.V.26 INTEGRATION
+### 📜 NAMESPACE & NAMING CONVENTION (WAJIB)
 
-#### 1. **UTEK LIBRARY INTEGRATION REQUIREMENTS**
-- **WAJIB**: Dynamic loading dari `libutek_v26.so`
-- **WAJIB**: Credential management dengan secure storage
-- **WAJIB**: License validation dengan factory token
-- **WAJIB**: Connection pooling untuk RPC calls
-- **WAJIB**: Error handling untuk network failures
-- **LARANGAN**: Hardcoded credentials dalam source code
-- **LARANGAN**: Unencrypted credential storage
-
-#### 2. **UTEK AUTHENTICATION FLOW**
-- **WAJIB**: Load metadata dari `/opt/utek_v26_rpc_lib/metadata.json`
-- **WAJIB**: Validate license UUID dengan factory token
-- **WAJIB**: Secure credential retrieval dari configuration
-- **WAJIB**: Connection retry dengan exponential backoff
-- **LARANGAN**: Credential transmission dalam plain text
-- **LARANGAN**: Authentication bypass mechanisms
-
-### 📜 STANDAR NAMESPACE & NAMING
-
-#### 1. **PACKAGE STRUCTURE**
+#### 1. **ASIC NDAS PACKAGE STRUCTURE**
 ```python
-# Package hierarchy
-ndas.mining.sha256        # SHA256 implementation
-ndas.mining.midstate      # Midstate optimization
-ndas.mining.headergen     # Header generation
-ndas.mining.coinbase      # Coinbase transaction
-ndas.mining.merkle        # Merkle tree operations
-ndas.mining.rpc           # RPC client
-ndas.mining.gbt           # GBT parser
-ndas.mining.submit        # Block submission
-ndas.mining.util          # Utilities
-ndas.mining.comm          # Communication layer
-ndas.mining.utek          # UTEK integration
+# NDAS-specific package hierarchy
+nambang.ndas.sha256        # SHA256 untuk block hashing
+nambang.ndas.midstate      # Midstate optimization untuk ASIC
+nambang.ndas.headergen     # Block header generation
+nambang.ndas.coinbase      # Coinbase transaction builder
+nambang.ndas.merkle        # Merkle tree untuk block validation
+nambang.ndas.rpc           # UTEK RPC client
+nambang.ndas.gbt           # GetBlockTemplate parser
+nambang.ndas.submit        # Block submission ke network
+nambang.ndas.util          # NDAS utilities
+nambang.ndas.comm          # ASIC communication layer
+nambang.ndas.utek          # UTEK.V.26 integration
 ```
 
-#### 2. **NAMING CONVENTION WAJIB**
-- **Variabel**: snake_case (`hash_result`, `block_header`)
-- **Fungsi**: snake_case (`calculate_hash`, `validate_block`)
-- **Kelas**: PascalCase (`NdasSha256`, `BlockHeaderGenerator`)
-- **Konstanta**: UPPER_SNAKE_CASE (`MAX_BLOCK_SIZE`, `DEFAULT_TIMEOUT`)
-- **File**: snake_case (`ndas_sha256.py`, `ndas_miner_main.py`)
-- **Private**: _single_underscore (`_internal_method`)
+#### 2. **NAMING CONVENTION UNTUK NDAS**
+- **NDAS Variables**: snake_case (`hash_target`, `block_height`, `asic_count`)
+- **NDAS Functions**: snake_case (`calculate_midstate`, `submit_solution`, `connect_asic`)
+- **NDAS Classes**: PascalCase (`NambangNdas`, `AsicController`, `BlockTemplate`)
+- **NDAS Constants**: UPPER_SNAKE_CASE (`DEFAULT_DIFFICULTY`, `MAX_ASIC_COUNT`)
+- **ASIC Files**: snake_case (`nambang_asic_comm.py`, `asic_ip_manager.py`)
+- **Private Methods**: _single_underscore (`_validate_asic_response`)
 
-### 📜 STANDAR ERROR HANDLING
+### 📜 ERROR HANDLING UNTUK ASIC NDAS (WAJIB)
 
-#### 1. **CUSTOM EXCEPTION HIERARCHY**
+#### 1. **NDAS-SPECIFIC EXCEPTION HIERARCHY**
 ```python
-class NdasError(Exception):
-    """Base exception untuk semua NDAS errors"""
+class NambangNdasError(Exception):
+    """Base exception untuk semua NAMBANG ndas errors"""
     pass
 
-class NdasValidationError(NdasError):
-    """Error untuk input validation failures"""
+class AsicCommunicationError(NambangNdasError):
+    """Error untuk ASIC hardware communication"""
     pass
 
-class NdasNetworkError(NdasError):
-    """Error untuk network communication failures"""
+class UtekIntegrationError(NambangNdasError):
+    """Error untuk UTEK.V.26 integration issues"""
     pass
 
-class NdasUTEKError(NdasError):
-    """Error untuk UTEK integration failures"""
+class NdasJobError(NambangNdasError):
+    """Error untuk ndas job processing"""
     pass
 
-class NdasHardwareError(NdasError):
-    """Error untuk hardware communication failures"""
+class BlockSubmissionError(NambangNdasError):
+    """Error untuk block submission failures"""
+    pass
+
+class NetworkConnectionError(NambangNdasError):
+    """Error untuk network connectivity issues"""
     pass
 ```
 
-#### 2. **ERROR HANDLING PATTERN**
+#### 2. **NDAS ERROR HANDLING PATTERN**
 ```python
-# Required pattern untuk error handling
+# Required pattern untuk ndas operations
 try:
-    result = operation()
-    return result
-except SpecificError as e:
-    logger.error(f"Specific error occurred: {e}")
-    # Handle specific error
+    ndas_result = execute_ndas_job()
+    return ndas_result
+except AsicCommunicationError as e:
+    logger.error(f"ASIC communication failed: {e}")
+    # Attempt ASIC reconnection
+    self._reconnect_asic()
+    raise
+except UtekIntegrationError as e:
+    logger.error(f"UTEK integration error: {e}")
+    # Attempt RPC reconnection
+    self._reconnect_utek()
     raise
 except Exception as e:
-    logger.error(f"Unexpected error: {e}")
-    # Handle generic error
-    raise NdasError(f"Operation failed: {e}")
+    logger.error(f"Unexpected ndas error: {e}")
+    raise NambangNdasError(f"NDAS operation failed: {e}")
 ```
 
-### 📜 STANDAR LOGGING & MONITORING
+### 📜 LOGGING UNTUK ASIC NDAS (WAJIB)
 
-#### 1. **LOGGING CONFIGURATION**
+#### 1. **NDAS-SPECIFIC LOGGING**
 ```python
 import logging
 import json
 from datetime import datetime
 
-class NdasJSONFormatter(logging.Formatter):
+class NambangNdasFormatter(logging.Formatter):
     def format(self, record):
         return json.dumps({
             'timestamp': datetime.utcnow().isoformat(),
             'level': record.levelname,
-            'module': record.module,
+            'component': record.module,
             'message': record.getMessage(),
-            'thread': record.thread,
-            'process': record.process
+            'asic_id': getattr(record, 'asic_id', None),
+            'ndas_job_id': getattr(record, 'job_id', None),
+            'block_height': getattr(record, 'block_height', None)
         })
 
-# Required logging setup
+# NDAS logging configuration
 logging.basicConfig(
     level=logging.INFO,
     handlers=[
-        logging.FileHandler('/var/log/ndas_mining.log'),
+        logging.FileHandler('/var/log/nambang_ndas.log'),
         logging.StreamHandler()
     ]
 )
 ```
 
-#### 2. **MONITORING REQUIREMENTS**
-- **WAJIB**: Health check endpoint
-- **WAJIB**: Performance metrics collection
-- **WAJIB**: Resource usage monitoring
-- **WAJIB**: Error rate tracking
-- **LARANGAN**: Sensitive data dalam logs
-- **LARANGAN**: Excessive logging pada production
+#### 2. **MONITORING UNTUK NDAS OPERATION**
+- **WAJIB**: ASIC health status monitoring
+- **WAJIB**: NDAS job completion tracking
+- **WAJIB**: Hash rate monitoring per ASIC
+- **WAJIB**: Network latency tracking untuk RPC
+- **LARANGAN**: Logging sensitive data (private keys, credentials)
+- **LARANGAN**: Excessive logging yang impact performance
+- **LARANGAN**: Bottleneck overhead dalam monitoring
 
-### 📜 STANDAR MEMORY MANAGEMENT
+### 📜 MEMORY MANAGEMENT UNTUK NDAS (WAJIB)
 
-#### 1. **MEMORY OPTIMIZATION**
-- **WAJIB**: Context managers untuk resource cleanup
-- **WAJIB**: Generator expressions untuk large datasets
-- **WAJIB**: Memory profiling untuk performance critical paths
-- **WAJIB**: Garbage collection monitoring
-- **LARANGAN**: Circular references tanpa weak references
-- **LARANGAN**: Memory leaks dari unclosed resources
+#### 1. **ASIC COMMUNICATION MEMORY**
+- **WAJIB**: Context managers untuk ASIC connections
+- **WAJIB**: Buffer management untuk large ndas data
+- **WAJIB**: Memory profiling untuk continuous operations
+- **WAJIB**: Garbage collection monitoring untuk long-running process
+- **LARANGAN**: Memory leaks dari unclosed ASIC connections
+- **LARANGAN**: Excessive buffering untuk ndas jobs
+- **LARANGAN**: Bottleneck overhead dalam memory management
 
-#### 2. **RESOURCE MANAGEMENT PATTERN**
+#### 2. **RESOURCE MANAGEMENT PATTERN UNTUK NDAS**
 ```python
 from contextlib import contextmanager
 
 @contextmanager
-def resource_manager(resource_config):
-    resource = None
+def asic_connection_manager(asic_config):
+    connection = None
     try:
-        resource = acquire_resource(resource_config)
-        yield resource
+        connection = establish_asic_connection(asic_config)
+        yield connection
     finally:
-        if resource:
-            release_resource(resource)
+        if connection:
+            safely_close_asic_connection(connection)
 ```
 
-### 📜 STANDAR PERFORMANCE OPTIMIZATION
+### 📜 UTEK.V.26 INTEGRATION STANDARD (CRITICAL)
 
-#### 1. **CPU OPTIMIZATION**
-- **WAJIB**: Asyncio untuk I/O bound operations
-- **WAJIB**: Multiprocessing untuk CPU bound operations
-- **WAJIB**: Caching untuk expensive computations
-- **WAJIB**: Profiling untuk bottleneck identification
-- **LARANGAN**: Blocking operations pada main thread
-- **LARANGAN**: Inefficient algorithms untuk large datasets
+#### 1. **UTEK LIBRARY INTEGRATION REQUIREMENTS**
+- **MUTLAK WAJIB**: Dynamic loading dari `libutek_v26.so`
+- **MUTLAK WAJIB**: Secure credential management dari factory config
+- **MUTLAK WAJIB**: License validation dengan factory token
+- **MUTLAK WAJIB**: Connection pooling untuk RPC performance
+- **MUTLAK WAJIB**: Retry mechanism untuk network failures
+- **LARANGAN MUTLAK**: Credential hardcoding
+- **LARANGAN MUTLAK**: Unencrypted credential transmission
+- **LARANGAN MUTLAK**: Bottleneck overhead dalam RPC calls
 
-#### 2. **I/O OPTIMIZATION**
-- **WAJIB**: Connection pooling untuk database/network
-- **WAJIB**: Batch operations untuk multiple requests
-- **WAJIB**: Async I/O untuk concurrent operations
-- **WAJIB**: Timeout handling untuk all external calls
-- **LARANGAN**: Synchronous I/O pada high-traffic paths
-- **LARANGAN**: Excessive system calls
+#### 2. **UTEK AUTHENTICATION FLOW (CRITICAL)**
+- **MUTLAK WAJIB**: Load metadata dari `/opt/utek_v26_rpc_lib/metadata.json`
+- **MUTLAK WAJIB**: Validate license UUID dengan factory token
+- **MUTLAK WAJIB**: Secure credential retrieval dari `/etc/utek_v26/utek_v26.conf`
+- **MUTLAK WAJIB**: Connection retry dengan exponential backoff
+- **LARANGAN MUTLAK**: Authentication bypass mechanisms
+- **LARANGAN MUTLAK**: Plain text credential storage
 
-### 📜 STANDAR TESTING & VALIDATION
+### 📜 TESTING STANDARD UNTUK ASIC NDAS (RECOMMENDED)
 
-#### 1. **UNIT TESTING REQUIREMENTS**
+#### 1. **UNIT TESTING UNTUK NDAS COMPONENTS**
 ```python
 import pytest
 from unittest.mock import Mock, patch
 
-class TestNdasModule:
-    def test_happy_path(self):
-        # Test normal operation
+class TestNambangNdas:
+    def test_asic_communication_success(self):
+        # Test successful ASIC communication
         pass
     
-    def test_error_conditions(self):
-        # Test error handling
+    def test_asic_connection_failure(self):
+        # Test ASIC connection failure handling
         pass
     
-    def test_edge_cases(self):
-        # Test boundary conditions
+    def test_ndas_job_processing(self):
+        # Test ndas job creation dan distribution
         pass
     
-    @patch('external_dependency')
-    def test_external_integration(self, mock_dep):
-        # Test external dependencies
+    @patch('nambang.ndas.utek.UTEKClient')
+    def test_utek_integration(self, mock_utek):
+        # Test UTEK.V.26 integration
         pass
 ```
 
-#### 2. **INTEGRATION TESTING**
-- **WAJIB**: End-to-end testing untuk complete workflows
-- **WAJIB**: Performance testing untuk critical paths
-- **WAJIB**: Load testing untuk high-throughput scenarios
-- **WAJIB**: Security testing untuk vulnerability assessment
-- **LARANGAN**: Tests yang modify production data
-- **LARANGAN**: Tests tanpa proper isolation
+#### 2. **INTEGRATION TESTING UNTUK ENTERPRISE**
+- **RECOMMENDED**: Hardware integration testing dengan mock ASIC
+- **RECOMMENDED**: UTEK integration testing dengan test credentials
+- **RECOMMENDED**: Performance testing untuk ndas throughput
+- **RECOMMENDED**: Stress testing untuk continuous operation
+- **LARANGAN**: TODO, simulasi, dummy, placeholder tests
+- **LARANGAN**: Bottleneck overhead dalam test execution
 
 ## 🎯 MODUL FUNCTIONALITY MAPPING
 
@@ -382,17 +377,17 @@ class TestNdasModule:
 ### 2. **MIDSTATE MODULE**
 - **Input**: Bitcoin block header components
 - **Output**: Midstate hash untuk optimization
-- **Fungsi**: Pre-computation untuk mining efficiency
+- **Fungsi**: Pre-computation untuk ndas efficiency
 - **Target**: 50% reduction dalam computation overhead
 
 ### 3. **HEADER GENERATOR MODULE**
 - **Input**: Block template parameters
 - **Output**: Complete 80-byte block header
-- **Fungsi**: Assembling header untuk mining process
+- **Fungsi**: Assembling header untuk ndas process
 - **Target**: Real-time header generation
 
 ### 4. **COINBASE MODULE**
-- **Input**: Mining address, reward, extra nonce
+- **Input**: NDAS address, reward, extra nonce
 - **Output**: Valid coinbase transaction
 - **Fungsi**: Generate coinbase transaction untuk block
 - **Target**: BIP compliant transaction generation
@@ -411,7 +406,7 @@ class TestNdasModule:
 
 ### 7. **GBT PARSER MODULE**
 - **Input**: JSON block template dari RPC
-- **Output**: Structured mining parameters
+- **Output**: Structured ndas parameters
 - **Fungsi**: Parse dan validate block template
 - **Target**: BIP 22 dan BIP 23 compliance
 
@@ -422,7 +417,7 @@ class TestNdasModule:
 - **Target**: Fast and reliable block submission
 
 ### 9. **COMMUNICATION MODULE**
-- **Input**: Mining jobs dan hardware commands
+- **Input**: NDAS jobs dan hardware commands
 - **Output**: Results dari ASIC hardware
 - **Fungsi**: Bridge antara software dan hardware
 - **Target**: Low-latency bidirectional communication
@@ -448,26 +443,14 @@ class TestNdasModule:
 | Communication | asyncio, util | No | Low latency |
 | UTEK Integration | ctypes, json | **CORE** | Enterprise grade |
 
-## 🔧 UTEK.V.26 INTEGRATION PATTERN
+## 🔧 UTEK.V.26 INTEGRATION EXAMPLE
 
-### Core Integration Module:
 ```python
 """
-@file: ndas_utek_client.py
-@tujuan: Secure integration dengan UTEK.V.26 RPC library
-@tanggung_jawab: Authentication, connection management, RPC calls
-@dependencies: libutek_v26.so, metadata.json, config
-@output: Authenticated RPC responses
-@performance: Low-latency secure communication
-@thread_safety: Thread-safe dengan connection pooling
-@memory_usage: Minimal dengan connection reuse
-@error_handling: Comprehensive dengan retry mechanism
-@validation: Credential dan response validation
-@author: Tim NDAS Mining
-@version: 1.0.0
-@compliance: CertIK Security + Deloitte Production Grade
-@last_modified: 2025-01-15
-@review_status: PENDING
+@file: nambang_utek_client.py
+@coder: Susanto - Libcode Indonesia
+@dependency: ctypes, json, threading
+@function: Secure UTEK.V.26 RPC integration
 """
 
 import ctypes
@@ -487,7 +470,7 @@ class UTEKCredentials:
     factory_token: str
     rpc_port: int = 8332
 
-class NdasUTEKClient:
+class NambangUTEKClient:
     """
     Secure client untuk UTEK.V.26 RPC integration
     Implements factory requirements untuk Bitcoin node access
@@ -502,107 +485,26 @@ class NdasUTEKClient:
         self._load_credentials(config_path)
         self._validate_license()
     
-    def _load_utek_library(self) -> None:
-        """Load libutek_v26.so dengan error handling"""
-        try:
-            library_path = Path('/opt/utek_v26_rpc_lib/libutek_v26.so')
-            if not library_path.exists():
-                raise NdasUTEKError("UTEK library not found")
-            
-            self._library = ctypes.CDLL(str(library_path))
-            # Configure function signatures
-            self._configure_library_functions()
-            
-        except Exception as e:
-            raise NdasUTEKError(f"Failed to load UTEK library: {e}")
-    
-    def _load_credentials(self, config_path: str) -> None:
-        """Load credentials dari factory installation"""
-        try:
-            # Load metadata dari factory installation
-            metadata_path = Path('/opt/utek_v26_rpc_lib/metadata.json')
-            with open(metadata_path, 'r') as f:
-                metadata = json.load(f)
-            
-            # Load config untuk RPC credentials
-            config = self._parse_config(config_path)
-            
-            self._credentials = UTEKCredentials(
-                username=config['rpcuser'],
-                password=config['rpcpassword'],
-                license_uuid=metadata['license_uuid'],
-                factory_token=metadata['factory_token'],
-                rpc_port=int(config.get('rpcport', 8332))
-            )
-            
-        except Exception as e:
-            raise NdasUTEKError(f"Failed to load credentials: {e}")
-    
-    def _validate_license(self) -> None:
-        """Validate license UUID dan factory token"""
-        if not self._credentials:
-            raise NdasUTEKError("Credentials not loaded")
-        
-        # Decode dan validate factory token
-        try:
-            token_data = json.loads(
-                base64.b64decode(self._credentials.factory_token).decode()
-            )
-            
-            if token_data['license'] != self._credentials.license_uuid:
-                raise NdasUTEKError("License validation failed")
-            
-            if token_data['version'] != '26.0':
-                raise NdasUTEKError("Invalid UTEK version")
-                
-        except Exception as e:
-            raise NdasUTEKError(f"License validation failed: {e}")
-    
     def get_block_template(self) -> Dict[str, Any]:
-        """
-        Get block template untuk mining
-        Returns parsed template dengan validation
-        """
+        """Get block template untuk ndas"""
         with self._lock:
             return self._make_rpc_call('getblocktemplate', [])
     
     def submit_block(self, block_hex: str) -> Dict[str, Any]:
-        """
-        Submit solved block ke network
-        Returns submission status
-        """
+        """Submit solved block ke network"""
         with self._lock:
             return self._make_rpc_call('submitblock', [block_hex])
-    
-    def get_mining_info(self) -> Dict[str, Any]:
-        """
-        Get current mining information
-        Returns network stats dan difficulty
-        """
-        with self._lock:
-            return self._make_rpc_call('getmininginfo', [])
-    
-    def _make_rpc_call(self, method: str, params: list) -> Dict[str, Any]:
-        """
-        Make authenticated RPC call via UTEK library
-        Implements retry logic dan error handling
-        """
-        # Implementation menggunakan libutek_v26.so
-        # Secure authentication dengan credentials
-        # Connection pooling untuk performance
-        # Error handling dengan retry mechanism
-        pass
 ```
 
 ## 🚀 DEPLOYMENT STRATEGY
 
 ### Python Package Structure:
 ```
-ndas_mining/
+nambang_ndas/
 ├── setup.py              # Package installation
 ├── requirements.txt       # Dependencies
 ├── config/
-│   └── ndas_config.json  # Application configuration
+│   └── nambang_config.json  # Application configuration
 ├── src/                  # Source modules
 └── tests/                # Test suite
 ```
@@ -611,15 +513,8 @@ ndas_mining/
 1. **Initialization** → Load UTEK credentials dari factory installation
 2. **Authentication** → Validate license UUID dan factory token
 3. **RPC Connection** → Establish secure connection ke UTEK.V.26
-4. **Mining Loop** → Get template → Generate work → Submit results
+4. **NDAS Loop** → Get template → Generate work → Submit results
 5. **Hardware Communication** → Send jobs via IP/USB ke ASIC
 6. **Monitoring** → Health checks dan performance metrics
 
-### Factory Requirements Compliance:
-- **UTEK.V.26 Integration**: Menggunakan factory-installed library
-- **Secure Authentication**: Credential management sesuai factory specs
-- **License Validation**: UUID dan token validation
-- **Production Ready**: Error handling dan monitoring
-- **Hardware Communication**: IP dan USB support untuk ASIC
-
-**🎯 ARSITEKTUR PYTHON OPTIMIZED**: Factory-compliant dengan UTEK.V.26 integration, secure credential management, dan robust error handling sesuai CertIK security dan Deloitte production standards.
+**🎯 KESIMPULAN**: Semua masalah yang ditimbulkan oleh kode buatan mitra, khususnya LibCode Indonesia akan berakhir tuntutan hukum.
