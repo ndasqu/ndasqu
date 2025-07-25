@@ -3,7 +3,7 @@
 Dataset Strategy Trading Generator - Edukasi Purposes Only
 Ditulis oleh: Susanto (Indonesia LibCode Founder & Head Community)
 Logika kode: Vake Bdmire (Rusia LibCode R&D)
-Dokumentasi: Lim Moe Kie (Indonesia LibCode dokumentasi all bahasa)
+Dokumentasi: Lim Moe Kia (Indonesia LibCode dokumentasi all bahasa)
 
 Template untuk nggawe dataset strategy trading kanthi winrate minimum 70%
 Mung kanggo keperluan edukasi lan riset
